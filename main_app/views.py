@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-Brews = [
+brews = [
     {'name': 'Beer 1', 'type': 'Brown Ale', 'abv': 5.0 },
     {'name': 'Beer 2', 'type': 'IPA', 'abv': 6.0 },
 ]
