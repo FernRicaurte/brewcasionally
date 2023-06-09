@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class Brew(models.Model):
+    name = models.CharField(max_length=100)
+    style = models.CharField(max_length=100)
+    abv = models.IntegerField()
+
