@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+#import Brew model below
+from .models import Brew
+#register model below
+admin.site.register(Brew)
