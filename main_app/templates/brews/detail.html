@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Brew Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ brew.name }}</span>
+    <p>Style: {{ brew.style }}</p>
+    <p>ABV: {{ brew.abv }}</p>
+  </div>
+</div>
+
+{% endblock %}
