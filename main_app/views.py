@@ -11,3 +11,7 @@ def about(request):
 def brews_index(request):
     brews = Brew.objects.all()
     return render(request, 'brews/index.html', { 'brews' : brews })
+
+def brews_detail(request, brew_id):
+    brew = Brew.objects.get(id=brew_id)
+    return render(request, 'brews/detail.html', { 'brew' : brew })
