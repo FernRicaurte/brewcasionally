@@ -9,6 +9,10 @@
     <p>Style: {{ brew.style }}</p>
     <p>ABV: {{ brew.abv }}</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'brews_update' brew.id %}">Edit</a>
+    <a href="{% url 'brews_delete' brew.id %}">Delete</a>
+  </div>
 </div>
 
 {% endblock %}
