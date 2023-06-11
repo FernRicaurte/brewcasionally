@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Brew
 from .forms import EventForm
@@ -32,5 +32,10 @@ class BrewDelete(DeleteView):
     success_url = '/brews'
 
 def add_event(request, brew_id):
-    pass
+    form = EventForm(request.POST)
+    if form.is_valid():
+        new_event = form.save(commit=False)
+        new_event.brew_id = brew_id
+        new_event.save()
+    return redirect('detail', brew_id=brew_id)
 
