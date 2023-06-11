@@ -30,3 +30,7 @@ class BrewUpdate(UpdateView):
 class BrewDelete(DeleteView):
     model = Brew
     success_url = '/brews'
+
+def add_event(request, brew_id):
+    pass
+
