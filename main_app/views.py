@@ -39,11 +39,11 @@ class BrewCreate(CreateView):
 
 class BrewUpdate(UpdateView):
     model = Brew
-    fields = '__all__'
+    fields = ['name', 'style', 'abv']
 
 class BrewDelete(DeleteView):
     model = Brew
-    success_url = '/brews'
+    success_url = '/brews/'
 
 class SnackCreate(CreateView):
     model = Snack
