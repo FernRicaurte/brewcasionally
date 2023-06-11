@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Brew
 
 
@@ -20,3 +20,11 @@ def brews_detail(request, brew_id):
 class BrewCreate(CreateView):
     model = Brew
     fields = '__all__'
+
+class BrewUpdate(UpdateView):
+    model = Brew
+    fields = '__all__'
+
+class BrewDelete(DeleteView):
+    model = Brew
+    success_url = '/brews'
