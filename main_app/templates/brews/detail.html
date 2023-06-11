@@ -15,6 +15,11 @@
   </div>
 </div>
 <div class="col s6">
+  <form action="{% url 'add_event' brew.id %}" method="POST">
+    {% csrf_token %}
+    {{ event_form.as_p }}
+    <input type="submit" class="btn" value="Add Event">
+  </form>
   <form method="POST">
     {% csrf_token %}
     <!-- Render the inputs -->
