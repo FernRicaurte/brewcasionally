@@ -35,7 +35,7 @@ def assoc_snack(request, brew_id, snack_id):
 
 class BrewCreate(CreateView):
     model = Brew
-    fields = '__all__'
+    fields = ['name', 'style', 'abv']
 
 class BrewUpdate(UpdateView):
     model = Brew
