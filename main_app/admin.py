@@ -6,3 +6,4 @@ from .models import Brew, Event, Snack
 admin.site.register(Brew)
 admin.site.register(Event)
 admin.site.register(Snack)
+
