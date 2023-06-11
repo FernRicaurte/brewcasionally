@@ -24,4 +24,5 @@ def get_absolute_url(self):
 
 class Event(models.Model):
     date = models.DateField()
-    occasion = models.CharField(max_length=1)
+    occasion = models.CharField(max_length=1, choices=OCCASIONS, default=OCCASIONS[6][6])
+
