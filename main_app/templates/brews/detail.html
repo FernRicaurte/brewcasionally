@@ -20,12 +20,6 @@
     {{ event_form.as_p }}
     <input type="submit" class="btn" value="Add Event">
   </form>
-  <form method="POST">
-    {% csrf_token %}
-    <!-- Render the inputs -->
-    {{ event_form.as_p }}
-    <input type="submit" class="btn" value="Add Event">
-  </form>
   <table class="striped">
     <thead>
       <tr><th>Date</th><th>Occasion</th></tr>
