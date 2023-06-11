@@ -17,12 +17,14 @@ class Brew(models.Model):
     abv = models.CharField(max_length=100)
 
 def __str__(self):
-    return self.name
-    # Add this method
+    return f"{self.get_occasion_display()} on {self.date}"
+    
 def get_absolute_url(self):
     return reverse('detail', kwargs={'brew_id': self.id})
 
 class Event(models.Model):
     date = models.DateField()
-    occasion = models.CharField(max_length=1, choices=OCCASIONS, default=OCCASIONS[6][6])
+    occasion = models.CharField(max_length=1, choices=OCCASIONS, default=OCCASIONS[0][0])
+
+    brew = models.ForeignKey(Brew, on_delete=models.CASCADE)
 
