@@ -14,5 +14,20 @@
     <a href="{% url 'brews_delete' brew.id %}">Delete</a>
   </div>
 </div>
-
+<div class="col s6">
+  <table class="striped">
+    <thead>
+      <tr><th>Date</th><th>Occasion</th></tr>
+    </thead>
+    <tbody>
+      {% for event in brew.event_set.all %}
+        <tr>
+          <td>{{event.date}}</td>
+          <td>{{event.get_occasion_display}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
 {% endblock %}

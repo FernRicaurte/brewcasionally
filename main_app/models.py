@@ -23,7 +23,7 @@ def get_absolute_url(self):
     return reverse('detail', kwargs={'brew_id': self.id})
 
 class Event(models.Model):
-    date = models.DateField()
+    date = models.DateField('event date')
     occasion = models.CharField(max_length=1, choices=OCCASIONS, default=OCCASIONS[0][0])
 
     brew = models.ForeignKey(Brew, on_delete=models.CASCADE)
