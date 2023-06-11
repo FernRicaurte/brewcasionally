@@ -5,3 +5,8 @@ class Brew(models.Model):
     style = models.CharField(max_length=100)
     abv = models.CharField(max_length=100)
 
+def __str__(self):
+    return self.name
+    # Add this method
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'brew_id': self.id})
