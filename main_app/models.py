@@ -1,6 +1,16 @@
 from django.db import models
 from django.urls import reverse
 
+class Snack(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'A {self.name} {self.description}'
+    
+    def get_absolute_url(self):
+        return reverse('snacks_detail', kwargs={'pk': self.id})
+
 OCCASIONS = (
     ('S', 'Sports Viewing'),
     ('P', 'Party'),
@@ -15,6 +25,7 @@ class Brew(models.Model):
     name = models.CharField(max_length=100)
     style = models.CharField(max_length=100)
     abv = models.CharField(max_length=100)
+    snacks = models.ManyToManyField(Snack)
     
 def get_absolute_url(self):
     return reverse('detail', kwargs={'brew_id': self.id})
