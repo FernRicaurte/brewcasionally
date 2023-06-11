@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Brew
+from .forms import EventForm
 
 
 def home(request):
@@ -15,7 +16,8 @@ def brews_index(request):
 
 def brews_detail(request, brew_id):
     brew = Brew.objects.get(id=brew_id)
-    return render(request, 'brews/detail.html', { 'brew' : brew })
+    event_form = EventForm()
+    return render(request, 'brews/detail.html', { 'brew' : brew, 'event_form' : event_form })
 
 class BrewCreate(CreateView):
     model = Brew
