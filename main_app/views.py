@@ -89,8 +89,6 @@ class SnackDelete(LoginRequiredMixin, DeleteView):
 def signup(request):
     error_message = ''
     if request.method == 'POST':
-    # This is how to create a 'user' form object
-    # that includes the data from the browser
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
