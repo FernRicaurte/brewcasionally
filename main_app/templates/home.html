@@ -3,4 +3,26 @@
 
 <h1>Brewcasionally Home Page</h1>
 
+<form method="GET">
+    <input type="number" name="abv" placeholder="Enter ABV" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if beers %}
+    <h2>Search Results:</h2>
+    <ul>
+        {% for beer in beers %}
+        <strong><li>{{ beer.name }}</li></strong> 
+        <li>{{ beer.abv }}</li>
+        <i><li>{{ beer.food_pairing }}</li></i>
+        <br>
+        <img src="{{ beer.image_url }}" alt="Beer Image" width="50" height="100">
+        <li>{{ beer.description }}</li>
+        <br>
+            <!-- Add other relevant beer information here -->
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
 {% endblock %}

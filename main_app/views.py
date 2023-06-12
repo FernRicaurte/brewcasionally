@@ -3,9 +3,18 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Brew, Snack
 from .forms import EventForm
+import requests
 
 def home(request):
-    return render(request, 'home.html')
+    beers = []
+    if 'abv' in request.GET:
+        abv = request.GET['abv']
+    if abv.isdigit():
+        api_url = f'https://api.punkapi.com/v2/beers?abv_gt={abv}'
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        beers = response.json()
+    return render(request, 'home.html', {'beers': beers})
 
 def about(request):
     return render(request, 'about.html')
