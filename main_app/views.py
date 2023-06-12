@@ -43,7 +43,7 @@ class BrewUpdate(UpdateView):
 
 class BrewDelete(DeleteView):
     model = Brew
-    success_url = '/brews/'
+    success_url = '/brews/index'
 
 class SnackCreate(CreateView):
     model = Snack
