@@ -42,10 +42,9 @@
 
 
 ## Icebox:
+1. moving graphics 2. include searches in other parts of the app 3.Interactive styling 5. Add brews directly from the search.
 
-
-
-## Deployed on Heroku
-TBA 
+## Deployed
+TBA - onHeroku
 
 
