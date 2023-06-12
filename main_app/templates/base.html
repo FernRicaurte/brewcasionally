@@ -12,24 +12,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-  <header class="navbar-fixed">
-    <nav>
+  <header>
+    <nav class="orange">
       <div class="nav-wrapper">
-        <ul>
-          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Brewcasionally</a></li>
-        </ul>
+        <a href="{% url 'home' %}" class="brand-logo">&nbsp;&nbsp;Brewcasionally</a>
         <ul class="right">
-          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'about' %}">Welcome</a></li>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'brews_create' %}">Add a Brew</a></li>
-          <li><a href="{% url 'index' %}">My Brew Choices</a></li>
-          <li><a href="{% url 'snacks_create' %}">Add a Snack</a></li>
-          <li><a href="{% url 'snacks_list' %}">View All Snacks</a></li>
-          <li><a href="{% url 'logout' %}">Log Out</a></li>
+            <li><a href="{% url 'brews_create' %}">Add a Brew</a></li>
+            <li><a href="{% url 'index' %}">My Brew Choices</a></li>
+            <li><a href="{% url 'snacks_create' %}">Add a Snack</a></li>
+            <li><a href="{% url 'snacks_list' %}">View All Snacks</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
-          <li><a href="{% url 'login' %}">Log In</a></li>
-  {% endif %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
@@ -38,8 +36,10 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="page-footer">
-    <div class="right">All Rights Reserved, &copy; 2023 Brewcasionally &nbsp;</div>
+  <footer class="page-footer orange darken-3">
+    <div class="container">
+      <div class="center white-text">All Rights Reserved, &copy; 2023 Brewcasionally</div>
+    </div>
   </footer>
 </body>
 </html>

@@ -9,6 +9,7 @@ from .models import Brew, Snack
 from .forms import EventForm
 import requests
 
+@login_required
 def home(request):
     beers = []
     abv = None
