@@ -1,20 +1,14 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 from .models import Brew, Snack
 from .forms import EventForm
 import requests
 
 def home(request):
-    beers = []
-    if 'abv' in request.GET:
-        abv = request.GET['abv']
-    if abv.isdigit():
-        api_url = f'https://api.punkapi.com/v2/beers?abv_gt={abv}'
-    response = requests.get(api_url)
-    if response.status_code == 200:
-        beers = response.json()
-    return render(request, 'home.html', {'beers': beers})
+    return render(request, 'home.html')
 
 def about(request):
     return render(request, 'about.html')
@@ -45,6 +39,9 @@ def assoc_snack(request, brew_id, snack_id):
 class BrewCreate(CreateView):
     model = Brew
     fields = ['name', 'style', 'abv']
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class BrewUpdate(UpdateView):
     model = Brew
@@ -71,5 +68,21 @@ class SnackUpdate(UpdateView):
 class SnackDelete(DeleteView):
     model = Snack
     success_url = '/snacks/'
+
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+    # This is how to create a 'user' form object
+    # that includes the data from the browser
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('index')
+        else:
+            error_message = 'Invalid sign up - try again'
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
 
 

@@ -15,5 +15,6 @@ urlpatterns = [
     path('snacks/create/', views.SnackCreate.as_view(), name='snacks_create'),
     path('snacks/<int:pk>/update/', views.SnackUpdate.as_view(), name='snacks_update'),
     path('snacks/<int:pk>/delete/', views.SnackDelete.as_view(), name='snacks_delete'),
-    path('brews/<int:brew_id>/assoc_snack/<int:snack_id>/', views.assoc_snack, name='assoc_snack')
+    path('accounts/signup/', views.signup, name='signup'),
+    path('brews/<int:brew_id>/assoc_snack/<int:snack_id>/', views.assoc_snack, name='assoc_snack'),
 ]
