@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
+from django.contrib.auth.models import User
 
 class Snack(models.Model):
     name = models.CharField(max_length=100)
@@ -17,7 +19,7 @@ class Brew(models.Model):
     abv = models.CharField(max_length=100)
     #M:M relationship below
     snacks = models.ManyToManyField(Snack)
-    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.name
