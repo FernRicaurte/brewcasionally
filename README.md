@@ -49,6 +49,6 @@ I made this very simple and user-friendly Django App as sort of a pt.2 or compli
 1. moving graphics 2. include searches in other parts of the app 3.Interactive styling 5. Add brews directly from the search.
 
 ## Deployed
-TBA - onHeroku
+Heroku
 
 
