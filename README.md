@@ -1,5 +1,8 @@
 # Brewcasionally
 
+***This project might have been mistakenly described as implementing PostgreSQL, but it does not; instead is implements an open API for the brew information.
+***Please visit my finch_collector django project where database implementation was used with PostgreSQL.
+
 (https://brewcasionally.herokuapp.com/)
 
 I made this very simple and user-friendly Django App as sort of a pt.2 or compliment of my previous React app. I really like the practicality of Brewcasionally because I find myself always trying to find a good brew for a particular occasion that may be coming up. I also want to remember a brew I discover- whether in person or online, and save it for later- and why not- pair it with foods or snack that go very well with the brew. I like that in Brewcasionally, you not only get a brew by name, but by simply looking up brews with a personal liking parameter like abv, you get foods that compliment the brew and a nice description of it! I am a lover of micro and craft breweries and their brews, so this easy, user friendly, humble app is near and dear to me. Let's take a look inside to see what you can do in Brewcasionally.
