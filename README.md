@@ -12,7 +12,7 @@ I made this very simple and user-friendly Django App as sort of a pt.2 or compli
 
 ## Technologies used in this project:
 1.Python
-2.Jango
+2.Django
 3.CSS (Materialize library)
 4.HTML
 5.Punk API
