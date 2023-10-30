@@ -6,6 +6,9 @@ I made this very simple and user-friendly Django App as sort of a pt.2 or compli
 
 (https://capstonesei.invisionapp.com/freehand/Capstone-SEI-GyVLRC3FZ)
 
+![Screenshot 2023-10-29 at 10 32 46 PM](https://github.com/FernRicaurte/brewcasionally/assets/128169706/9642e9fc-fa4d-4a4c-963b-1a187f11055d)
+
+
 
 ## Technologies used in this project:
 1.Python
