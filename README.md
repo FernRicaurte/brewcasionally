@@ -13,6 +13,7 @@ I made this very simple and user-friendly Django App as sort of a pt.2 or compli
 3.CSS (Materialize library)
 4.HTML
 5.Punk API
+6.PostgreSQL
 
 ## Welcome (About) Page
 ![Screenshot 2023-06-12 at 12 18 57 PM](https://github.com/FernRicaurte/brewcasionally/assets/128169706/78717cc1-ce04-48ed-8f76-95b70695270f)
